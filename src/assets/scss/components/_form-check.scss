@@ -180,9 +180,9 @@ No radio button is displayed. Instead, checked radio buton has active border and
         margin: 0;
 
         &:checked+label {
-            background: $gray-900;
+            background: #febac2;
             border-color: $gray-900;
-            color: $white;
+            color: $gray-900;
         }
 
         &:disabled+label {
