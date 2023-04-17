@@ -4,7 +4,7 @@
     "description": "Bootstrap HTML Template created by Pixel Rocket",
     "scripts": {
         "start": "webpack-dev-server --open",
-        "build": "del-cli dist && webpack -p",
+        "build": "del-cli dist && webpack --mode production",
         "build-docs": "del-cli docs && webpack --config ./webpack.config.docs.js -p"
     },
     "keywords": [],

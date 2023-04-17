@@ -7,16 +7,16 @@ import noUiSlider from 'nouislider';
         const parentElem = priceSlider.closest('.widget-filter-price');
 
         noUiSlider.create(priceSlider, {
-            start: [60, 900],
+            start: [18, 32],
             connect: true,
             tooltips: [true, true],
             range: {
-                'min': 0,
-                'max': 1000
+                'min': 18,
+                'max': 50
             },
             pips: {
                 mode: 'values',
-                values: [0, 250, 500, 750, 1000],
+                values: [18, 26, 42, 50],
                 density: 100
             }
         });

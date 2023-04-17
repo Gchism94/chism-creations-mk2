@@ -1,0 +1,58 @@
+{
+    "entries": [{
+            "title": "Monster",
+            "price": "37.00",
+            "sale-price": "32.00",
+            "currency": "$",
+            "img": "{{webRoot}}/assets/images/quiet-ears/character/Monster_1.jpg"
+        },
+        {
+            "title": "Red Dot",
+            "price": "32.00",
+            "new": true,
+            "currency": "$",
+            "img": "{{webRoot}}/assets/images/quiet-ears/character/RedDot_1.jpg"
+        },
+        {
+            "title": "Dreamer",
+            "price": "32.00",
+            "sold-out": true,
+            "currency": "$",
+            "img": "{{webRoot}}/assets/images/quiet-ears/character/Dreamer_1.jpg"
+        },
+        {
+            "title": "Chameleon",
+            "price": "32.00",
+            "currency": "$",
+            "img": "{{webRoot}}/assets/images/quiet-ears/character/Chameleon_1.jpg"
+        },
+        {
+            "title": "Mermaid",
+            "price": "37.00",
+            "sale-price": "32.00",
+            "currency": "$",
+            "img": "{{webRoot}}/assets/images/quiet-ears/character/Mermaid_1.jpg"
+        },
+        {
+            "title": "Pirate",
+            "price": "37.00",
+            "sale-price": "32.00",
+            "new": true,
+            "currency": "$",
+            "img": "{{webRoot}}/assets/images/quiet-ears/character/Pirate_1.jpg"
+        },
+        {
+            "title": "Dog Lover",
+            "price": "32.00",
+            "currency": "$",
+            "img": "{{webRoot}}/assets/images/quiet-ears/character/DogLover_1.jpg"
+        },
+        {
+            "title": "Puzzle",
+            "price": "32.00",
+            "new": true,
+            "currency": "$",
+            "img": "{{webRoot}}/assets/images/quiet-ears/character/Puzzle_1.jpg"
+        }
+    ]
+}
