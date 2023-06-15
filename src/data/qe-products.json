@@ -1,17 +1,26 @@
 {
     "entries": [{
+            "id": "monster-qe",
             "title": "Monster",
             "price": "37.00",
             "sale-price": "32.00",
             "currency": "$",
-            "img": "{{webRoot}}/assets/images/quiet-ears/character/Monster_1.jpg"
+            "img": "{{webRoot}}/assets/images/quiet-ears/character/Monster_1.jpg",
+            "gallery": "product-gallery",
+            "info": "product-info",
+            "related": "product-related",
+            "reviews": "product-reviews"
         },
-        {
+        {   "id": "red-dot-qe",
             "title": "Red Dot",
             "price": "32.00",
             "new": true,
             "currency": "$",
-            "img": "{{webRoot}}/assets/images/quiet-ears/character/RedDot_1.jpg"
+            "img": "{{webRoot}}/assets/images/quiet-ears/character/RedDot_1.jpg",
+            "gallery": "product-gallery",
+            "info": "product-info",
+            "related": "product-related",
+            "reviews": "product-reviews"
         },
         {
             "title": "Dreamer",

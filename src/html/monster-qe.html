@@ -5,6 +5,8 @@
 {{> (config config.partials.head) title=config.defaultPageTitle }}
 
 <body class="{{ config.classes.body }}">
+    <!-- Debug: log the title -->
+    {{log}}
 
     <!-- Navbar -->
     {{> (config config.partials.navbar)
@@ -21,7 +23,7 @@
             <div class="container-fluid">
                 {{> breadcrumbs/breadcrumbs-light 
                     category="Quiet Ears"
-                    page="Monster Quiet Ears"
+                    page=this.title
                 }}
             </div>
         </div>
@@ -34,14 +36,14 @@
 
                 <!-- Product Images-->
                 <div class="col-12 col-md-6 col-xl-7">
-                    {{> monster-qe/product-gallery }}
+                    {{> (lookup . "gallery")}}
                 </div>
                 <!-- /Product Images-->
     
                 <!-- Product Information-->
                 <div class="col-12 col-md-6 col-lg-5">
                     <div class="sticky-top top-5">
-                        {{> monster-qe/product-info }}
+                        {{> (lookup . "info")}}
                     </div>
                 </div>
                 <!-- / Product Information-->
@@ -52,13 +54,13 @@
 
                 <!-- Related Products-->
                 <div class="col-12" data-aos="fade-up">
-                    {{> monster-qe/product-related }}
+                    {{> (lookup . "related") }}
                 </div>
                 <!-- / Related Products-->
 
                 <!-- Reviews-->
                 <div class="col-12" data-aos="fade-up">
-                    {{> monster-qe/product-reviews }}
+                    {{> (lookup . "reviews") }}
                 </div>
                 <!-- / Reviews-->
             </div>
