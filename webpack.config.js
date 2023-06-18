@@ -153,7 +153,10 @@ const wPackConfig = {
     new HandlebarsPlugin({
       entry: path.join(process.cwd(), 'src', 'html', '**', '*.html'),
       output: path.join(process.cwd(), 'dist', '[path]', '[name].html'),
-      partials: [path.join(process.cwd(), 'src', 'partials', '**', '*.{html,svg}')],
+      partials: [
+        path.join(process.cwd(), 'src', 'partials', '**', '*.{html,svg}'),
+        path.join(process.cwd(), 'src', 'partials', '**', '**', '*.{html,svg}') // add this line
+      ],
       data: projectData,
       helpers: {
         webRoot: function () {
@@ -168,6 +171,9 @@ const wPackConfig = {
           }
           return options.inverse(this);
         },
+        eq: function (arg1, arg2, options) {
+          return (arg1 === arg2) ? options.fn(this) : options.inverse(this);
+        },
         log: function (data) {
           console.log(data);
         },
@@ -176,7 +182,20 @@ const wPackConfig = {
             return [];
           }
           return arr.slice(0, limit);
-        }
+        },
+        partial: function(name, context) {
+          var partial = Handlebars.partials[name];
+          if (!partial) {
+              console.error('Missing partial: ' + name);
+          } else if (typeof partial === 'string') {
+              partial = Handlebars.compile(partial);
+              Handlebars.partials[name] = partial;
+          }
+          return new Handlebars.SafeString(partial(context));
+      },
+      concat: function () {
+          return Array.prototype.slice.call(arguments, 0, -1).join('');
+      }
       },
       onBeforeSave: function (Handlebars, res, file) {
         const elem = file.split('//').pop().split('/').length;

@@ -37,15 +37,16 @@
 
             <!-- Products-->
             <div class="row g-4">
-            {{#if (config qe-products)}}
-                {{#each qe-products.entries}}
-                    <div class="col-12 col-sm-6 col-lg-4">
-                        {{> listing-cards/listing-card this }}
-                    </div>
-                {{/each}}
-            {{/if}}
+                {{#if (config qe-products)}}
+                    {{#each qe-products.entries}}
+                        {{#ifEquals this.category "character"}}
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                {{> listing-cards/listing-card this }}
+                            </div>
+                        {{/ifEquals}}
+                    {{/each}}
+                {{/if}}
             </div>
-            <!-- / Products-->
 
             <!-- Pagination-->
             {{> pagination/pagination-full type="products" amount="8 of 8" }}
