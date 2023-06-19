@@ -12,7 +12,8 @@
             "reviews": "product-reviews",
             "category": "character"
         },
-        {   "id": "red-dot-qe",
+        {   
+            "id": "red-dot-qe",
             "title": "Red Dot",
             "price": "32.00",
             "new": true,
@@ -24,7 +25,8 @@
             "reviews": "product-reviews",
             "category": "character"
         },
-        {
+        {   
+            "id": "dreamer-qe",
             "title": "Dreamer",
             "price": "32.00",
             "sold-out": true,
@@ -36,7 +38,8 @@
             "reviews": "product-reviews",
             "category": "character"
         },
-        {
+        {   
+            "id": "chameleon-qe",
             "title": "Chameleon",
             "price": "32.00",
             "currency": "$",
@@ -47,7 +50,8 @@
             "reviews": "product-reviews",
             "category": "character"
         },
-        {
+        {   
+            "id": "mermaid-qe",
             "title": "Mermaid",
             "price": "37.00",
             "sale-price": "32.00",
@@ -59,7 +63,8 @@
             "reviews": "product-reviews",
             "category": "character"
         },
-        {
+        {   
+            "id": "pirate-qe",
             "title": "Pirate",
             "price": "37.00",
             "sale-price": "32.00",
@@ -72,7 +77,8 @@
             "reviews": "product-reviews",
             "category": "character"
         },
-        {
+        {   
+            "id": "dog-lover-qe",
             "title": "Dog Lover",
             "price": "32.00",
             "currency": "$",
@@ -84,6 +90,7 @@
             "category": "character"
         },
         {
+            "id": "puzzle-qe",
             "title": "Puzzle",
             "price": "32.00",
             "new": true,
