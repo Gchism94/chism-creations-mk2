@@ -33,7 +33,6 @@
     &:before, &:after {
         width: var(--theme-btn-psuedo-width);
         height: var(--theme-btn-psuedo-height);
-        background-color: currentColor;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -45,10 +44,12 @@
     &:before {
         left: calc(-1 * var(--theme-btn-psuedo-width));
         transition: all ease-in .2s;
+        background-color: #ff98bd;
     }
     &:after {
         right: 0;
         transition: all ease-in .2s .1s;
+        background-color: currentColor;
     }
 
     &:hover {

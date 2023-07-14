@@ -15,7 +15,15 @@ import './components/search';
 import './components/simplebar';
 import './components/swiper';
 
+// Recursive Supports weights 300-700
+import '@fontsource-variable/comfortaa';
 
+// Supports weights 400-900
+import '@fontsource-variable/maven-pro';
+
+import '@fontsource/artifika';
+
+import '@fontsource/inknut-antiqua';
 
 // theme misc js
 import './misc';

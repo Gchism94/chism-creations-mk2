@@ -1,31 +1,39 @@
 export class Navbar {
     constructor(menuToggle) {
-        this.menuToggle = menuToggle;
-        this.menuParent = this.menuToggle ? this.menuToggle.closest('.dropdown') : false;
-        this.dropdownMenu = this.menuParent ? this.menuParent.querySelector('.dropdown-menu') : false;
-        this.showEvents = ['mouseenter'];
-        this.hideEvents = ['mouseleave', 'click'];
-        this.cssVarBreakPoint = getComputedStyle(document.documentElement).getPropertyValue('--theme-breakpoint-lg') || '992px';
-        this.breakpointLG = parseInt(this.cssVarBreakPoint, 10);
-
-        this.initMenu();
+      this.menuToggle = menuToggle;
+      this.menuParent = this.menuToggle ? this.menuToggle.closest('.dropdown') : false;
+      this.dropdownMenu = this.menuParent ? this.menuParent.querySelector('.dropdown-menu') : false;
+      this.showEvents = ['mouseenter'];
+      this.hideEvents = ['mouseleave', 'click'];
+      this.cssVarBreakPoint = getComputedStyle(document.documentElement).getPropertyValue('--theme-breakpoint-lg') || '992px';
+      this.breakpointLG = parseInt(this.cssVarBreakPoint, 10);
+      this.hideTimeout = null;
+  
+      this.initMenu();
     }
-
+  
     initMenu() {
-        const _this = this;
-
-        if (this.menuParent) {
-            this.showEvents.forEach((event) => {
-                this.menuParent.addEventListener(event, function () {
-                    _this.showMenu();
-                })
-            });
-            this.hideEvents.forEach((event) => {
-                this.menuParent.addEventListener(event, function () {
-                    _this.hideMenu();
-                })
-            });
-        }
+      const _this = this;
+  
+      if (this.menuParent) {
+        this.showEvents.forEach((event) => {
+          this.menuParent.addEventListener(event, function () {
+            if (_this.hideTimeout) {
+              clearTimeout(_this.hideTimeout);
+              _this.hideTimeout = null;
+            }
+            _this.showMenu();
+          })
+        });
+        this.hideEvents.forEach((event) => {
+          this.menuParent.addEventListener(event, function () {
+            if (_this.hideTimeout) {
+              clearTimeout(_this.hideTimeout);
+            }
+            _this.hideTimeout = setTimeout(() => _this.hideMenu(), 500); // 1 second delay before hiding
+          })
+        });
+      }
     }
 
     showMenu() {

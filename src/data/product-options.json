@@ -19,11 +19,39 @@
         },
         {
             "label-bottom": "XL",
-            "value": "Xl"
+            "value": "XL"
         },
         {
             "label-bottom": "XXL",
             "value": "XXL"
         }
-    ]
+    ],
+    "bow": {
+        "entries": [
+            {
+                "label-bottom": "Bow",
+                "value": "Bow",
+                "selected": true
+
+            },
+            {
+                "label-bottom": "No Bow",
+                "value": "No Bow"
+            }
+        ]
+    },
+    "type": {
+        "entries": [
+            {
+                "label-bottom": "Quiet Ears",
+                "value": "Quiet Ears",
+                "selected": true
+
+            },
+            {
+                "label-bottom": "Headband",
+                "value": "Headband"
+            }
+        ]
+    }
 }

@@ -3,8 +3,8 @@
     <div class="col">
         <h6 class="dropdown-heading">Quiet Ears</h6>
         <ul class="list-unstyled">
-            <li class="dropdown-list-item"><a class="dropdown-item" href="./character-qe.html">Character</a></li>
-            <li class="dropdown-list-item"><a class="dropdown-item" href="{{webRoot}}/category.html">Standard</a></li>
+            <li class="dropdown-list-item"><a class="dropdown-item" href="{{webRoot}}/character-qe.html">Character</a></li>
+            <li class="dropdown-list-item"><a class="dropdown-item" href="{{webRoot}}/standard-qe.html">Standard</a></li>
             <li class="dropdown-list-item"><a class="dropdown-item" href="{{webRoot}}/category.html">Princess</a></li>
             <li class="dropdown-list-item"><a class="dropdown-item" href="{{webRoot}}/category.html">HeadBand</a></li>
             <li class="dropdown-list-item"><a class="dropdown-item dropdown-link-all" href="{{webRoot}}/category.html">View All</a></li>
@@ -30,7 +30,7 @@
     <div class="d-none d-xxl-block col">
         <h6 class="dropdown-heading">Custom</h6>
         <ul class="list-unstyled">
-            <li class="dropdown-list-item"><a class="dropdown-item" href="{{webRoot}}/category.html">Quiet Ears</a></li>
+            <li class="dropdown-list-item"><a class="dropdown-item" href="{{webRoot}}/all-qe.html">Quiet Ears</a></li>
             <li class="dropdown-list-item"><a class="dropdown-item" href="{{webRoot}}/category.html">Crochet</a></li>
             <li class="dropdown-list-item"><a class="dropdown-item" href="{{webRoot}}/category.html">No Bow Ears</a></li>
             <li class="dropdown-list-item"><a class="dropdown-item" href="{{webRoot}}/category.html">Headband Ears</a></li>
@@ -59,11 +59,12 @@
 </div>
 
 <div class="align-items-center justify-content-between mt-5 d-none d-lg-flex">
-    {{#each (limit slideshow-brands.entries 6)}}
-    <div class="me-5 f-w-20">
-        <a class="d-block" href="{{webRoot}}/category.html">
+    {{#each (limit slideshow-brands.entries 1)}}
+    <div>
+        <a>
             <picture>
-                <img class="img-fluid d-table mx-auto" src="{{ img }}" alt="{{ config.defaultImgAlt }}">
+                <img src="{{ img }}" alt="{{ config.defaultImgAlt }}"
+                style="height:100px;" style="width:100px;">
             </picture>
         </a>
     </div>

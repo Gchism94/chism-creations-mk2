@@ -69,6 +69,41 @@
     <!-- Theme JS -->
     {{> footer/scripts }}
 
+    <!-- JavaScript -->
+    <script>
+        // Fetch product data and dynamically render product cards using JavaScript
+
+        // Example code to fetch product data from the server or use the qe-products.json file
+        fetch('/qe-products.json')
+            .then(response => response.json())
+            .then(data => {
+                const products = data.entries;
+                const container = document.querySelector('.row.g-4');
+
+                // Iterate over products and dynamically create product cards
+                products.forEach(product => {
+                    if (product.category === 'character') {
+                        const cardContainer = document.createElement('div');
+                        cardContainer.classList.add('col-12', 'col-sm-6', 'col-lg-4');
+
+                        const link = document.createElement('a');
+                        link.href = `/product.html?id=${product.id}&category=${product.category}&title=${encodeURIComponent(product.title)}`;
+
+                        const listingCardTemplate = document.querySelector('#listing-card-template');
+                        const cardContent = document.importNode(listingCardTemplate.content, true);
+                        link.appendChild(cardContent);
+
+                        cardContainer.appendChild(link);
+                        container.appendChild(cardContainer);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching product data:', error);
+            });
+    </script>
+    
 </body>
 
 </html>
+

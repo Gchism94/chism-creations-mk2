@@ -1,19 +1,19 @@
 /* Text color */
 .text-pink-dark {
-    color: #f88cb3;
+    color: #ff82c9;
 }
 
 /* Dark Button --> Pink button  */
 .btn-pink{
     color:#0e131f;
-    background-color:#ffc0d1;
+    background-color:#ffe5fe;
     border-color:#111827
 }
 .btn-check:focus+.btn-pink,
 .btn-pink:focus,
 .btn-pink:hover {
     color:#0e131f;
-    background-color:#f88cb3;
+    background-color:#ff82c9;
     border-color:#0e131f
 }
 .btn-check:focus+.btn-pink,.btn-pink:focus {
@@ -26,7 +26,7 @@
 .show>
 .btn-pink.dropdown-toggle {
     color:#0e131f;
-    background-color:#f88cb3;
+    background-color:#ff82c9;
     border-color:#0d121d
 }
 .btn-check:active+.btn-pink:focus,
@@ -40,7 +40,7 @@
 .btn-pink.disabled,
 .btn-pink:disabled {
     color:#0e131f;
-    background-color:#f88cb3;
+    background-color:#ff82c9;
     border: color #111827;
 }
 
@@ -51,7 +51,7 @@
 }
 .btn-outline-pink:hover {
     color:#111827;
-    background-color:#f88cb3;
+    background-color:#ff82c9;
     border-color:#111827
 }
 .btn-check:focus+.btn-outline-pink,
@@ -64,7 +64,7 @@
 .dropdown-toggle.show,
 .btn-outline-pink:active {
     color:#fff;
-    background-color:#f88cb3;
+    background-color:#ff82c9;
     border-color:#111827 
 }
 .btn-check:active+.btn-outline-pink:focus,
@@ -81,20 +81,33 @@
 
 /* Text Pink */
 .text-pink {
-    color:#f88cb3 !important
+    color:#ff82c9 !important
 }
 .text-dark-hover:hover {
-    color:#f88cb3 !important
+    color:#ff82c9 !important
 }
 .text-dark-focus:focus {
-    color:#f88cb3 !important
+    color:#ff82c9 !important
 }
 .text-dark-active:active{
-    color:#F88Cb3 !important
+    color:#ff82c9 !important
 }
 
 /* Background Pink */
 .bg-pink,
 .bg-pink:hover {
-    background-color:#f88cb3!important
+    background-color:#ff82c9 !important
+}
+
+li a i, li a svg {
+    vertical-align: middle;
+}
+
+.svg-link path {
+    fill: #111827; /* Default color */
+    transition: fill 0.5s; /* This line adds a smooth transition */
+}
+
+.svg-link:hover path {
+    fill: #ff82c9 !important
 }

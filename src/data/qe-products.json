@@ -101,6 +101,19 @@
             "related": "product-related",
             "reviews": "product-reviews",
             "category": "character"
+        },
+        {
+            "id": "puzzle-qe",
+            "title": "Puzzle",
+            "price": "32.00",
+            "new": true,
+            "currency": "$",
+            "img": "{{webRoot}}/assets/images/quiet-ears/character/Puzzle_1.jpg",
+            "gallery": "product-gallery",
+            "info": "product-info",
+            "related": "product-related",
+            "reviews": "product-reviews",
+            "category": "character"
         }
     ]
 }

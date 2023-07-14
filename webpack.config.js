@@ -57,35 +57,57 @@ const wPackConfig = {
   devtool: 'source-map',
   mode: 'development',
   module: {
-    rules: [{
-      test: /\.(sass|scss|css)$/,
-      include: path.resolve(__dirname, paths.src.scss.slice(2)),
-      use: [{
-          loader: MiniCssExtractPlugin.loader,
-        },
-        {
-          loader: 'css-loader',
-          options: {
-            url: false,
-            // sourceMap: true,
+    rules: [
+      {
+        test: /\.(sass|scss|css)$/,
+        include: path.resolve(__dirname, paths.src.scss.slice(2)),
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+              // sourceMap: true,
+            },
           },
-        },
-        {
-          loader: 'postcss-loader'
-        },
-        {
-          loader: 'sass-loader',
-          // options: {
-          //     sourceMap: true,
-          //     sassOptions: {
-          //         indentWidth: 4,
-          //         outputStyle: 'expanded',
-          //         sourceComments: true
-          //     }
-          // }
-        },
-      ],
-    }, ]
+          {
+            loader: 'postcss-loader',
+          },
+          {
+            loader: 'sass-loader',
+            // options: {
+            //     sourceMap: true,
+            //     sassOptions: {
+            //         indentWidth: 4,
+            //         outputStyle: 'expanded',
+            //         sourceComments: true
+            //     }
+            // }
+          },
+        ],
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: paths.dist.fonts,
+              publicPath: '../fonts' // Adjust this based on your project structure
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        include: path.resolve(__dirname, 'node_modules'),
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+        ],
+      },
+    ],    
   },
   optimization: {
     splitChunks: {

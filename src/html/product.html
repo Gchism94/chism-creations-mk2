@@ -12,62 +12,15 @@
         classList="" }}
     <!-- / Navbar-->
 
-    <!-- Main Section-->
-    <section class="mt-0 {{ config.classes.content }}">
-        <!-- Page Content Goes Here -->            
-        
-        <!-- Breadcrumbs-->
-        <div class="bg-dark py-6">
-            <div class="container-fluid">
-                {{> breadcrumbs/breadcrumbs-light 
-                    category="T-Shirts"
-                    page="Osaka Japan Mens T-Shirt"
-                }}
-            </div>
+    <!-- Breadcrumbs-->
+    <div class="bg-dark py-6">
+        <div class="container-fluid">
+            {{> breadcrumbs/breadcrumbs category=this.category page=this.title }}
         </div>
-        <!-- / Breadcrumbs-->
+    </div>
+    <!-- / Breadcrumbs-->
 
-        <div class="container-fluid mt-5">
-
-            <!-- Product Top Section-->
-            <div class="row g-9" data-sticky-container>
-
-                <!-- Product Images-->
-                <div class="col-12 col-md-6 col-xl-7">
-                    {{> product/product-gallery }}
-                </div>
-                <!-- /Product Images-->
-    
-                <!-- Product Information-->
-                <div class="col-12 col-md-6 col-lg-5">
-                    <div class="sticky-top top-5">
-                        {{> product/product-info }}
-                    </div>
-                </div>
-                <!-- / Product Information-->
-            </div>
-            <!-- / Product Top Section-->
-
-            <div class="row g-0">
-
-                <!-- Related Products-->
-                <div class="col-12" data-aos="fade-up">
-                    {{> product/product-related }}
-                </div>
-                <!-- / Related Products-->
-
-                <!-- Reviews-->
-                <div class="col-12" data-aos="fade-up">
-                    {{> product/product-reviews }}
-                </div>
-                <!-- / Reviews-->
-            </div>
-
-        </div>
-
-        <!-- /Page Content -->
-    </section>
-    <!-- / Main Section-->
+    <div id="product-page"></div>
 
     <!-- Footer -->
     {{> (config config.partials.footer)
@@ -79,6 +32,62 @@
     <!-- Theme JS -->
     {{> footer/scripts }}
 
+    <script>
+        // Fetch product data based on the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        
+        // Make an API call or retrieve product data from the JSON file
+        // Replace this with your own logic to fetch the product data
+        
+        // Example: Fetching the product data from the JSON file
+        fetch('/qe-products.json')
+            .then(response => response.json())
+            .then(data => {
+                const product = data.entries.find(entry => entry.id === productId);
+                renderProductPage(product);
+            })
+            .catch(error => console.error(error));
+        
+        // Render the product page based on the product data
+        function renderProductPage(product) {
+            const productPageContainer = document.getElementById('product-page');
+            const productPageTemplate = `
+                <!-- Main Section-->
+                <section class="mt-0 ${config.classes.content}">
+                    <!-- Page Content Goes Here -->
+                    
+                    <!-- Product Top Section-->
+                    <div class="row g-9" data-sticky-container>
+        
+                        <!-- Product Images-->
+                        <div class="col-12 col-md-6 col-xl-7">
+                            <img src="${product.img}" alt="${product.title}" class="img-fluid">
+                        </div>
+                        <!-- /Product Images-->
+        
+                        <!-- Product Information-->
+                        <div class="col-12 col-md-6 col-lg-5">
+                            <h2>${product.title}</h2>
+                            <p>Price: ${product.currency}${product.price}</p>
+                            <p>Sale Price: ${product.currency}${product['sale-price']}</p>
+                            <!-- Add more product information here -->
+                        </div>
+                        <!-- / Product Information-->
+                    </div>
+                    <!-- / Product Top Section-->
+        
+                    <!-- /Page Content -->
+                </section>
+                <!-- / Main Section-->
+            `;
+            productPageContainer.innerHTML = productPageTemplate;
+        }
+    </script>
+
 </body>
 
 </html>
+
+
+
