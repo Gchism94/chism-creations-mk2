@@ -14,6 +14,7 @@ import './components/scroll-to';
 import './components/search';
 import './components/simplebar';
 import './components/swiper';
+import './components/load-more';  // New Load More component
 
 // Recursive Supports weights 300-700
 import '@fontsource-variable/comfortaa';

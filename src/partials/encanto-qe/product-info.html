@@ -1,0 +1,133 @@
+<div class="pb-3" data-aos="fade-in">
+    <div class="d-flex align-items-center mb-3">
+        <p class="small fw-bolder text-uppercase tracking-wider text-muted m-0 me-4">Encanto Quiet Ears</p>
+        <div class="d-flex justify-content-start align-items-center disable-child-pointer cursor-pointer"
+        data-pixr-scrollto
+        data-target=".reviews">
+        {{> reviews/review-stars-small colour="text-pink" }}
+        <small class="text-muted d-inline-block ms-2 fs-bolder">(0 reviews)</small>
+    </div>
+    </div>
+    
+    <h1 class="mb-1 fs-2 fw-bold">Encanto Quiet Ears</h1>
+    <div class="d-flex justify-content-between align-items-center">
+        <p class="fs-4 m-0">$32.00</p>
+    </div>
+    <div class="border-top mt-4 mb-3 product-option">
+        <small class="text-uppercase pt-4 d-block fw-bolder">
+            <span class="text-muted"></span> : <span class="selected-option fw-bold"
+                data-pixr-product-option="size"></span>
+        </small>
+        <div class="mt-4 d-flex justify-content-start flex-wrap align-items-start">
+            {{#if (config product-options)}}
+                {{#each product-options.entries}}
+                    {{> options/option-radio this type="sizes" option-classes="form-check-rounded" }}
+                {{/each}}
+            {{/if}}
+        </div>
+    </div>
+    <div class="mb-3">
+        <small class="text-uppercase pt-4 d-block fw-bolder text-muted">
+            Available Designs :
+        </small>
+        <div class="mt-4 d-flex justify-content-start flex-wrap align-items-start">
+            <picture class="me-2">
+                <img class="f-w-24 p-2 bg-light border-bottom border-dark border-2 cursor-pointer" src="{{webRoot}}/assets/images/quiet-ears/character/Encanto_1.jpg" alt="{{ config.defaultImgAlt }}">
+            </picture>
+        </div>
+    </div>
+    <button class="btn btn-pink w-100 mt-4 mb-0 hover-lift-sm hover-boxshadow">Add To Shopping Bag</button>
+
+    <!-- Product Highlights-->
+        <div class="my-5">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="text-center px-2">
+                        <i class="ri-24-hours-line ri-2x"></i>
+                        <small class="d-block mt-1">Next-day Delivery</small>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="text-center px-2">
+                        <i class="ri-secure-payment-line ri-2x"></i>
+                        <small class="d-block mt-1">Secure Checkout</small>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="text-center px-2">
+                        <i class="ri-service-line ri-2x"></i>
+                        <small class="d-block mt-1">Free Returns</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- / Product Highlights-->
+
+    <!-- Product Accordion -->
+    <div class="accordion" id="accordionProduct">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Product Details
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionProduct">
+            <div class="accordion-body">
+                <p class="m-0">You will receive one set of Quiet Ears (headphones not included).</p>
+                <br>
+                <p class="m-0">Ears are fabric on the front and back with cardstock in the center for structure, making ears lightweight and comfortable for all day wear! If you want a custom design, message me for details.</p>
+                <br>
+                <p class="m-0">Quiet Ears fit on most headphones. They are ideal for noise canceling headphones, but will also work on music headphones.</p>
+                <p class="m-0">Everything is handmade, and will have imperfections. Colors may vary slightly on screen. Themed fabric ears will vary between each pair.</p>
+                <br>
+                <p class="m-0">If you have questions, or want a custom order, feel free to message me.</p>
+                <br>
+                <p class="m-0">❤Thank you for visiting my shop❤</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Details & Care
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionProduct">
+              <div class="accordion-body">
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item d-flex border-0 row g-0 px-0">
+                          <span class="col-4 fw-bolder">Composition</span>
+                          <span class="col-7 offset-1">Fabric on the front and back; cardstock center</span>
+                      </li>
+                      <li class="list-group-item d-flex border-0 row g-0 px-0">
+                          <span class="col-4 fw-bolder">Care</span>
+                          <span class="col-7 offset-1">It is not recommended to wear ears on water rides due to the cardstock interior. </span>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+          </div>        
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Delivery & Returns
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionProduct">
+            <div class="accordion-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex border-0 row g-0 px-0">
+                        <span class="col-4 fw-bolder">Delivery</span>
+                        <span class="col-7 offset-1">Standard delivery $12. Two week turnaround on orders.</span>
+                    </li>
+                    <li class="list-group-item d-flex border-0 row g-0 px-0">
+                        <span class="col-4 fw-bolder">Returns</span>
+                        <span class="col-7 offset-1">No refunds, returns or exchanges. See my <a class="text-link-border" href="#">terms & conditions.</a></span>
+                    </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- / Product Accordion-->
+</div>
